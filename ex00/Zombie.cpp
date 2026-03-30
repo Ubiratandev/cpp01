@@ -7,13 +7,16 @@ void Zombie::setName(std::string& value)
 }
 void Zombie::announce(void)
 {
-    std::cout<<"Iam a zumbie and my name is "<<name<<"\n";
+    std::cout<<name<<": BraiiiiiiinnnzzzZ..."<<std::endl;
 }
-Zombie::Zombie(void)
+Zombie* newZombie(const std::string& name)
 {
-    std::cout<<"consturctor is alive\n";
+    Zombie *zombieNew = new Zombie(name);
+    return zombieNew;
 }
-Zombie::~Zombie(void)
+void randomChump( std::string name )
 {
-    std::cout<<"Desctructor called\n";
+    Zombie * chumpZombie = newZombie(name);
+    chumpZombie->announce();
+    delete chumpZombie;
 }
