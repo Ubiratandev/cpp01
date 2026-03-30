@@ -1,12 +1,14 @@
-NAME = sed
+NAME = humans
 
 CXX = c++
 CXXFLAGS = -Wall -Wextra -Werror -std=c++98
 
-SRCS = main.cpp Sed.cpp
-OBJS = $(SRCS:.cpp=.o)
+SRCS = main.cpp \
+       Weapon.cpp \
+       HumanA.cpp \
+       HumanB.cpp
 
-RM = rm -f
+OBJS = $(SRCS:.cpp=.o)
 
 all: $(NAME)
 
@@ -17,10 +19,10 @@ $(NAME): $(OBJS)
 	$(CXX) $(CXXFLAGS) -c $< -o $@
 
 clean:
-	$(RM) $(OBJS)
+	rm -f $(OBJS)
 
 fclean: clean
-	$(RM) $(NAME)
+	rm -f $(NAME)
 
 re: fclean all
 

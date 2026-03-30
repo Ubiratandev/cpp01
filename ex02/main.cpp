@@ -1,20 +1,20 @@
-#include<iostream>
-#include<string>
-#include "HumanA.hpp"
-#include "HumanB.hpp"
-#include "Weapon.hpp"
+#include <iostream>
+#include <string>
 
-int main(void)
+int main()
 {
-   std::string typeWeapon = "faca";
-   Weapon  newWeapon(typeWeapon);
-   HumanA  newHumanA("Fabio Akita" , newWeapon);
-   HumanB newHumanB ("luca montano"); 
-   newHumanA.atack();
-newHumanB.atack();
+    std::string var = "HI THIS IS BRAIN";
+    
+    std::string* pointer = &var;
 
-Weapon newHumanBWeapon(typeWeapon);
-newHumanB.setMyWeapon(newHumanBWeapon);
+    std::string& ref = var;
 
-newHumanB.atack();
+    
+    std::cout<<"adress of var: "<<&var<<std::endl;
+    std::cout<<"adress of pointer: "<<pointer<<std::endl;
+    std::cout<<"adress of ref: "<<&ref<<std::endl;
+
+    std::cout<<"value of var "<<var<<std::endl;
+    std::cout<<"value of pointer "<<*pointer<<std::endl;
+    std::cout<<"value of ref "<<ref<<std::endl;
 }
